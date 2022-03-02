@@ -4,14 +4,15 @@ import com.spring.springoopcontainerbean.domain.Grade;
 import com.spring.springoopcontainerbean.domain.Member;
 import com.spring.springoopcontainerbean.domain.Order;
 import com.spring.springoopcontainerbean.service.MemberService;
-import com.spring.springoopcontainerbean.service.MemberServiceImpl;
 import com.spring.springoopcontainerbean.service.OrderService;
-import com.spring.springoopcontainerbean.service.OrderServiceImpl;
+
 
 public class OrderApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
+
 
         Long memberId = 1L;
         Member member = new Member(memberId,"memberA", Grade.VIP);

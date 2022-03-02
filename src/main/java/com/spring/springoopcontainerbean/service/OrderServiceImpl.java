@@ -1,15 +1,17 @@
 package com.spring.springoopcontainerbean.service;
 
 import com.spring.springoopcontainerbean.discount.DiscountPolicy;
-import com.spring.springoopcontainerbean.discount.FixDiscountPolicy;
 import com.spring.springoopcontainerbean.domain.Member;
 import com.spring.springoopcontainerbean.domain.Order;
 import com.spring.springoopcontainerbean.repository.MemberRepository;
 import com.spring.springoopcontainerbean.repository.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 
+
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
 
     @Override
